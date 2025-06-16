@@ -1,0 +1,38 @@
+# File: docker-compose.yml
+
+version: '3.8'
+
+services:
+  # 1. The PostgreSQL Database Service
+  postgres:
+    image: postgres:16-alpine
+    container_name: rustforms-db
+    ports:
+      - "5432:5432" # Expose the database port to your local machine
+    environment:
+      # These are the credentials your Rust app will use to connect.
+      # You can change these, but make sure they match your .env file.
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: rustforms_db
+    volumes:
+      - rustforms-data:/var/lib/postgresql/data # This saves your DB data even if the container stops
+    restart: unless-stopped
+
+  # 2. The Rust API Service (we will create its Dockerfile next)
+  api:
+    container_name: rustforms-api
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    ports:
+      - "3001:3001" # Expose the API port
+    depends_on:
+      - postgres # Tells Docker to start the database before starting the API
+    environment:
+      # We will create this .env.docker file next
+      - .env.docker
+    restart: unless-stopped
+
+volumes:
+  rustforms-data: # Defines the persistent volume for the database
