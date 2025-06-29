@@ -23,20 +23,41 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@/components/*": [
+        "./components/*"
+      ],
+      "@/lib/*": [
+        "./lib/*"
+      ],
+      "@/hooks/*": [
+        "./hooks/*"
       ]
     },
     "outDir": "dist",
-    "rootDir": "src",
     "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo"
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.js",
-    "src/**/*.jsx",
     "../../apps/web-ui/.next/types/**/*.ts",
     "../../dist/apps/web-ui/.next/types/**/*.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "components/**/*.js",
+    "components/**/*.jsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "lib/**/*.js",
+    "lib/**/*.jsx",
+    "lib/**/*.ts",
+    "lib/**/*.tsx",
+    "hooks/**/*.js",
+    "hooks/**/*.jsx",
+    "hooks/**/*.ts",
+    "hooks/**/*.tsx",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "out-tsc",
