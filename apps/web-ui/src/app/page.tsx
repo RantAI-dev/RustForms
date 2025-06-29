@@ -1,8 +1,9 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Mail, Shield, Zap, Github, Globe } from "lucide-react"
+import { ArrowRight, Shield, Zap, Github, Globe } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -11,8 +12,8 @@ export default function HomePage() {
       <header className="border-b border-gray-800">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <Mail className="w-4 h-4 text-black" />
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+              <Image src="/logo.png" alt="Rustforms Logo" width={32} height={32} className="object-contain" />
             </div>
             <span className="text-xl font-bold text-white">Rustforms</span>
           </div>
@@ -147,8 +148,8 @@ export default function HomePage() {
       <footer className="border-t border-gray-800 py-8 px-4">
         <div className="container mx-auto">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-6 h-6 bg-white rounded flex items-center justify-center">
-              <Mail className="w-3 h-3 text-black" />
+            <div className="w-6 h-6 rounded flex items-center justify-center">
+              <Image src="/logo.png" alt="Rustforms Logo" width={24} height={24} className="object-contain" />
             </div>
             <span className="font-semibold text-white">Rustforms</span>
           </div>

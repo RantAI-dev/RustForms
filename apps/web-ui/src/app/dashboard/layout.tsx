@@ -4,9 +4,10 @@ import type React from "react"
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Mail, User, LogOut, FileText, Users, CreditCard, Settings, Building } from "lucide-react"
+import { User, LogOut, FileText, Users, CreditCard, Settings, Building } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { FEATURE_FLAGS } from "@/lib/feature-flags"
 
@@ -28,8 +29,8 @@ export default function DashboardLayout({
       <header className="border-b border-gray-800 bg-black">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/dashboard" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <Mail className="w-4 h-4 text-black" />
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+              <Image src="/logo.png" alt="Rustforms Logo" width={32} height={32} className="object-contain" />
             </div>
             <span className="text-xl font-bold text-white">Rustforms</span>
           </Link>
